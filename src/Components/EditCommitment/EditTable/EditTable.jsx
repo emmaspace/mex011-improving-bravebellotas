@@ -1,16 +1,23 @@
 import { Box, Table, Paper, Typography, TableContainer } from "@mui/material";
 import EditTableRow from "./EditTableRow";
 import EditTableHead from "./EditTableHead";
-import React, { useEffect } from "react";
+import React from "react";
 
-export default function EditTable({ title, tableData: data, selectedPeriod, currentUser, endpoint }) {
-
+export default function EditTable({
+  title,
+  tableData: data,
+  selectedPeriod,
+  currentUser,
+  endpoint,
+}) {
   // Filtering the info is still needed
   let headValues = Object.keys(data[0]);
   const rows = data.map((obj) =>
     Object.values(obj).splice(4, headValues.length)
   );
-  headValues = headValues.splice(4, headValues.length).map(title=>title.replace(/-/g, " "));
+  headValues = headValues
+    .splice(4, headValues.length)
+    .map((title) => title.replace(/-/g, " "));
 
   return (
     <>
@@ -22,6 +29,7 @@ export default function EditTable({ title, tableData: data, selectedPeriod, curr
           my: "2em",
           boxShadow: "none",
           border: "1px solid black",
+          py: 3,
         }}
       >
         <Typography
@@ -38,7 +46,7 @@ export default function EditTable({ title, tableData: data, selectedPeriod, curr
         {data ? (
           <Table sx={{ width: 7 / 8, mx: "auto" }} aria-label="simple table">
             <EditTableHead headValues={headValues} />
-            <EditTableRow rows={rows} endpoint={endpoint} />
+            <EditTableRow rows={rows} data={data} endpoint={endpoint} />
           </Table>
         ) : null}
       </TableContainer>

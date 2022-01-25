@@ -14,34 +14,21 @@ export default function EditCommitment() {
   const id = useParams();
   const { data, currentAmbition, selectedPeriod, error, currentUser } =
     useDataContext();
-  const [goal, setGoal] = useState();
 
   const endpoints = [
     "Career-Ambitions",
     "Period",
     "Main-Goal",
-    "Areas-Of-Focus",
     "Action-Plan",
+    "Areas-Of-Focus",
     "Accountability",
     "Planned-Deliberate-Practices",
     "Deliberate-Practice-Log",
   ];
 
-  useEffect(() => {
-    if (data && data !== {}) {
-      /* setGoal(
-        data.mainGoal.filter((info) => info.ambition === currentAmbition)[0][
-          "name"
-        ]
-      );
-      console.log(goal) */
-      console.log(currentAmbition);
-    } else if (error) console.log(error);
-  }, [data]);
-
   return (
     <Box component="main" id="edit">
-      <NavBar sx={{ position: "sticky" }} />
+      <NavBar />
       {data ? (
         <>
           <Typography
@@ -51,7 +38,7 @@ export default function EditCommitment() {
               fontWeight: "700",
               fontSize: "2em",
               textAlign: "center",
-              my: 2,
+              pt: 15,
             }}
           >
             Main Goal: {data ? data.mainGoal[0].name : null}
@@ -82,7 +69,7 @@ export default function EditCommitment() {
           title !== "mainGoal" &&
           title !== "ambition" &&
           title !== "users" ? (
-            <EditTable
+              <EditTable
               key={title + index}
               title={endpoints[index]}
               endpoint={endpoints[index]}
@@ -92,9 +79,17 @@ export default function EditCommitment() {
           ) : null
         )
       ) : !error ? (
-        <Typography>Loading...</Typography>
+        <Box sx={{ height: "100vh" }}>
+          <Typography sx={{ pt: 15, textAlign: "center" }}>
+            Loading...
+          </Typography>
+        </Box>
       ) : (
-        <Typography>There was an error, please reload the page</Typography>
+        <Box sx={{ height: "100vh" }}>
+          <Typography sx={{ pt: 15, textAlign: "center" }}>
+            There was an error, please reload the page
+          </Typography>
+        </Box>
       )}
     </Box>
   );
