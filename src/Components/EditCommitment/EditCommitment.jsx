@@ -4,40 +4,25 @@ import "../Styles/EditTable.css";
 
 import { useParams } from "react-router-dom";
 import EditTable from "./EditTable/EditTable";
-import TableInputs from "./EditTable/TableInputs";
 import { EditOutlined } from "@mui/icons-material";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { useDataContext } from "../../Hooks/json-provider";
 
 export default function EditCommitment() {
   const id = useParams();
-  const { data, currentAmbition, selectedPeriod, error, currentUser } =
-    useDataContext();
-  const [goal, setGoal] = useState();
+  const { data, selectedPeriod, error } = useDataContext();
 
   const endpoints = [
     "Career-Ambitions",
     "Period",
     "Main-Goal",
-    "Areas-Of-Focus",
     "Action-Plan",
+    "Areas-Of-Focus",
     "Accountability",
     "Planned-Deliberate-Practices",
     "Deliberate-Practice-Log",
   ];
-
-  useEffect(() => {
-    if (data && data !== {}) {
-      /* setGoal(
-        data.mainGoal.filter((info) => info.ambition === currentAmbition)[0][
-          "name"
-        ]
-      );
-      console.log(goal) */
-      console.log(currentAmbition);
-    } else if (error) console.log(error);
-  }, [data]);
 
   return (
     <Box component="main" id="edit">
