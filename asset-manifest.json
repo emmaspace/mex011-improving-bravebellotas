@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/mex011-improving-bravebellotas/static/css/main.a6272a95.css",
-    "main.js": "/mex011-improving-bravebellotas/static/js/main.1399be64.js",
+    "main.js": "/mex011-improving-bravebellotas/static/js/main.0c962751.js",
     "static/js/787.05fe508a.chunk.js": "/mex011-improving-bravebellotas/static/js/787.05fe508a.chunk.js",
     "static/media/career-build.png": "/mex011-improving-bravebellotas/static/media/career-build.89bb85b25a844366a480.png",
     "static/media/img-profile.jpg": "/mex011-improving-bravebellotas/static/media/img-profile.6a965241d63413cbbdda.jpg",
     "static/media/improving-logo.png": "/mex011-improving-bravebellotas/static/media/improving-logo.f82ab5bef31c0c4a8d60.png",
     "index.html": "/mex011-improving-bravebellotas/index.html",
     "main.a6272a95.css.map": "/mex011-improving-bravebellotas/static/css/main.a6272a95.css.map",
-    "main.1399be64.js.map": "/mex011-improving-bravebellotas/static/js/main.1399be64.js.map",
+    "main.0c962751.js.map": "/mex011-improving-bravebellotas/static/js/main.0c962751.js.map",
     "787.05fe508a.chunk.js.map": "/mex011-improving-bravebellotas/static/js/787.05fe508a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a6272a95.css",
-    "static/js/main.1399be64.js"
+    "static/js/main.0c962751.js"
   ]
 }
