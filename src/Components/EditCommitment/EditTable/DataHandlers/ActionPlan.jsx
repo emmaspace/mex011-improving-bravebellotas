@@ -19,7 +19,7 @@ export default function ActionPlan({ endpoint }) {
 
   const post = () => {
     console.log(goal);
-    jsonData(`http://localhost:5000/${endpoint}`, "POST", {
+    jsonData(`https://fake-api-bravebellotas.herokuapp.com/${endpoint}`, "POST", {
       id: 0,
       user: "squad@braveBellotas.com",
       ambition: 1,
